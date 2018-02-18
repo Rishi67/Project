@@ -312,8 +312,8 @@ end
 
 function glayer1(x0, w, m; training=true)
     x = w[1] * x0
-    x = batchnorm(x, m, w[2]; training=training)
-    x = leaky_relu.(x)
+    #x = batchnorm(x, m, w[2]; training=training)
+    x = leaky_relu.(x,0.02)
     return x
 end
 
